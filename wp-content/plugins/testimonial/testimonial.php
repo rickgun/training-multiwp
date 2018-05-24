@@ -75,9 +75,11 @@ function testimonial_delete_data($id = 0)
         	$wpdb->delete(
 	        	'wp_user_testimonial',
 	        	array(
-					'id' => $id
+					'id' => $id,
+					'blog_id' => get_current_blog_id()
 	        	),
 	        	array(
+	        		'%d',
 	        		'%d'
 	        	)
         	)
